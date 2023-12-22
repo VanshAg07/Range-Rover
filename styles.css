@@ -1,0 +1,350 @@
+*{
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+}
+
+.wrapper{
+     width: 100%;
+     height: 100vh;
+     overflow-y: auto;
+     overflow-x: hidden;
+     font-family: "poppins", sans-serif;
+     background-color: blueviolet;
+}
+
+.container{
+     position: relative;
+     width: 860px;
+     margin: 0 auto;
+     display: flex;
+     padding: 100px 0px;
+     flex-wrap: wrap;
+}
+
+.section-fluid{
+     position: relative;
+     width: 100%;
+     display: block;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+     visibility: hidden;
+     position: absolute;
+}
+
+.colorbtn:checked + label,
+.colorbtn:not(:checked) + label{
+     height: 40px;
+     border-radius: 4px;
+     width: 40px;
+     cursor: pointer;
+     border: 3px solid transparent;
+     z-index: 10;
+     margin-right: 10px;
+     background-position: center;
+     background-size: cover;
+     transition: all 200ms linear;
+
+}
+
+label.firstcolor{
+margin-left: 500px;
+background-color: #F5F0CC;
+}
+
+label.color2{
+     background-color: #000000;
+}
+
+label.color3{
+     background-color: #E7E8E9;
+}
+
+label.color4{
+     background-color: #021529;
+}
+
+.colorbtn:checked + label{
+     border-color: #434343;
+     transform: scale(1.1);
+}
+
+.imgwrap{
+     height: 410px;
+     width: 500px;
+     background-image: url(./images/3.png);
+     top: 100px;
+     left: 0%;
+     background-size: 100%;
+     display: inline-block;
+     background-repeat: no-repeat;position: absolute;
+     transition: all 550ms linear;
+     opacity: 0;
+      transition-delay: 100ms;
+      z-index: 9;
+
+}
+
+.forcolor1:checked ~ .imgwrap.car1{
+      opacity: 1;
+  animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.imgwrap.car2{
+     background-image: url(./images/2.png);
+}
+
+.forcolor2:checked ~ .imgwrap.car2{
+      opacity: 1;
+  animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.imgwrap.car3{
+     background-image: url(./images/1.png);
+}
+
+.forcolor3:checked ~ .imgwrap.car3{
+      opacity: 1;
+  animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.imgwrap.car4{
+     background-image: url(./images/4.png);
+}
+
+.forcolor4:checked ~ .imgwrap.car4{
+      opacity: 1;
+  animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes shake {
+     100%,
+     90%{
+          transform: translate3d(-1px, 0, o) rotate(-1deg);
+     }
+     20%,
+     80%{
+          transform: translate3d(2px, 0, o) rotate(2deg);
+       }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-3px, 0, 0) rotate(-3deg);
+  }
+  40%,
+  60% {
+    transform: translate3d(3px, 0, 0) rotate(3deg);
+  }     
+}
+
+.backcolor{
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: block;
+     z-index: 1;
+          background-image: linear-gradient(196deg, #afa6a0, #8c7f76);
+ transition: all 250ms linear;
+ transition-delay: 300ms ;
+
+}
+
+.backcolor.car2{
+     background-image: linear-gradient(196deg, #4c4c4c, #262626);
+     opacity: 0;
+}
+
+.forcolor2:checked ~ .backcolor.car2{
+     opacity: 1;
+}
+
+.backcolor.car3{
+     background-image: linear-gradient(196deg, #aaadac, #838786);
+     opacity: 0;
+}
+
+.forcolor3:checked ~ .backcolor.car3{
+     opacity: 1;
+}
+
+.backcolor.car4{
+     background-image: linear-gradient(196deg, #8a9fb2, #5f7991);
+     opacity: 0;
+}
+
+.forcolor4:checked ~ .backcolor.car4{
+     opacity: 1;
+}
+
+
+
+.info {
+  position: relative;
+  margin-left: 500px;
+  z-index: 10;
+  display: block;
+
+  text-align: left;
+}
+
+h2 {
+   /* font-family:   'Trebuchet MS', sans-serif; */
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 1.2;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 1.2;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+h4 span {
+  text-decoration: line-through;
+  font-size: 20px;
+  opacity: 0.6;
+  padding-left: 15px;
+}
+h5 {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.descbtn:checked + label,
+.descbtn:not(:checked) + label {
+  position: relative;
+  transition: all 200ms linear;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  color: #ffeba7;
+
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #fff;
+  margin-right: 25px;
+  opacity: 0.5;
+}
+.descbtn:checked + label {
+  opacity: 1;
+}
+.descbtn:not(:checked) + label:hover {
+  opacity: 0.8;
+}
+
+.descSec {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  transition: all 250ms linear;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateY(20px);
+  color: #fff;
+}
+.descSec.accor2 {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+#desc1:checked ~ .descSec.accor1 {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+#desc2:checked ~ .descSec.accor2 {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.sectionInline {
+  position: relative;
+  display: inline-block;
+  margin-right: 20px;
+}
+.sectionInline p span {
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.btn {
+  position: absolute;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 2;
+  height: 48px;
+  border-radius: 4px;
+  width: 210px;
+  letter-spacing: 1px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  overflow: hidden; 
+   background-color: transparent;
+  color: #fff;
+  box-shadow: 0 6px 15px 0 rgba(16, 39, 112, 0.15);
+  transition: all 250ms linear;
+  text-decoration: none;
+  margin-top: 50px;
+}
+
+ .icon {
+  padding-right: 7px;
+  font-size: 20px;
+} 
+.btn:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  z-index: -10;
+  
+  transition: background-color 250ms 300ms ease;
+}
+.btn:hover {
+  box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
+}
+.forcolor1:checked ~ .info .btn:before {
+background-image: linear-gradient(196deg, #afa6a0, #8c7f76);
+}
+
+.forcolor2:checked ~ .info .btn:before {
+     
+ background-image: linear-gradient(196deg, #4c4c4c, #262626);
+}
+
+.forcolor3:checked ~ .info .btn:before {
+ 
+     background-image: linear-gradient(196deg, #aaadac, #838786);
+}
+
+.forcolor4:checked ~ .info .btn:before {
+ background-image: linear-gradient(196deg, #8a9fb2, #5f7991);
+}
+
+.fa-cart-shopping{
+       padding-right: 7px;
+  font-size: 20px;
+}
